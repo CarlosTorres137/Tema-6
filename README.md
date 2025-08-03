@@ -84,11 +84,11 @@ Ambos algoritmos se muestran visualmente en tablas con colores y resultados deta
 ---
 
 ### Búsqueda Secuencial
-![Búsqueda Secuencial](![alt text])
+![Búsqueda Secuencial](https://github.com/CarlosTorres137/Tema-6/edit/principal/README.md)
 
 ---
 
 ### Búsqueda Binaria
-![Búsqueda Binaria](![alt text])
+![Búsqueda Binaria](https://github.com/CarlosTorres137/Tema-6/blob/1e4a800c8434f2b1382c8d59296570c35ae5fae9/Busqueda%20Binaria.png)
 
 ---
