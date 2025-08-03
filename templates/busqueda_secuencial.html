@@ -1,0 +1,148 @@
+{% extends 'base.html' %}
+
+{% block title %}Búsqueda Secuencial - Sistema de Búsqueda{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row mb-4">
+        <div class="col-12">
+            <div class="d-flex justify-content-between align-items-center">
+                <div>
+                    <h1 class="h2 mb-0">
+                        <i class="bi bi-list-ul text-primary"></i> Búsqueda Secuencial
+                    </h1>
+                    <p class="text-muted mb-0">Recorre la lista elemento por elemento hasta encontrar el valor buscado</p>
+                </div>
+                <a href="{{ url_for('index') }}" class="btn btn-primary">
+                    <i class="bi bi-house"></i> Inicio
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-4 mb-4">
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="mb-0"><i class="bi bi-search"></i> Buscar Elemento</h5>
+                </div>
+                <div class="card-body">
+                    <form method="POST">
+                        <div class="mb-3">
+                            <label for="valor" class="form-label">Precio a buscar:</label>
+                            <input type="number" class="form-control" id="valor" name="valor" 
+                                   placeholder="Ingrese el precio..." required>
+                        </div>
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-primary">
+                                <i class="bi bi-search"></i> Buscar
+                            </button>
+                            <button type="button" class="btn btn-outline-secondary" onclick="generarNuevosDatos()">
+                                <i class="bi bi-arrow-clockwise"></i> Generar Nuevos Datos
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="card mt-3">
+                <div class="card-header bg-info text-white">
+                    <h6 class="mb-0"><i class="bi bi-info-circle"></i> Información del Algoritmo</h6>
+                </div>
+                <div class="card-body">
+                    <ul class="list-unstyled mb-0">
+                        <li><i class="bi bi-check-circle text-success"></i> Complejidad: O(n)</li>
+                        <li><i class="bi bi-check-circle text-success"></i> No requiere datos ordenados</li>
+                        <li><i class="bi bi-check-circle text-success"></i> Fácil de implementar</li>
+                        <li><i class="bi bi-exclamation-triangle text-warning"></i> Lento en listas grandes</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-8">
+            <div class="card">
+                <div class="card-header bg-success text-white">
+                    <h5 class="mb-0"><i class="bi bi-table"></i> Lista de Productos</h5>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Índice</th>
+                                    <th>ID</th>
+                                    <th>Producto</th>
+                                    <th>Precio</th>
+                                    <th>Estado</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for p in productos %}
+                                <tr>
+                                    <td><span class="badge bg-secondary">{{ loop.index0 }}</span></td>
+                                    <td><span class="badge bg-secondary">{{ p.id }}</span></td>
+                                    <td>{{ p.nombre }}</td>
+                                    <td><span class="badge bg-success">${{ p.precio }}</span></td>
+                                    <td>
+                                        {% if posicion == loop.index0 %}
+                                        <span class="badge bg-success">
+                                            <i class="bi bi-check-circle"></i> Encontrado
+                                        </span>
+                                        {% else %}
+                                        <span class="badge bg-secondary">
+                                            <i class="bi bi-dash"></i> No revisado
+                                        </span>
+                                        {% endif %}
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            {% if mensaje %}
+            <div class="card mt-3">
+                <div class="card-header bg-success text-white">
+                    <h6 class="mb-0"><i class="bi bi-info-circle"></i> Resultados</h6>
+                </div>
+                <div class="card-body">
+                    <div class="alert alert-info">
+                        <i class="bi bi-info-circle"></i> {{ mensaje }}
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+
+            {% if posicion is not none %}
+            <div class="card mt-3">
+                <div class="card-header bg-success text-white">
+                    <h6 class="mb-0"><i class="bi bi-info-circle"></i> Detalles</h6>
+                </div>
+                <div class="card-body bg-success bg-opacity-10 border border-success rounded">
+                    <p class="mb-1"><i class="bi bi-check-circle-fill text-success"></i> <strong>¡Elemento encontrado!</strong></p>
+                    <p class="mb-1"><strong>Posición:</strong> {{ posicion }}</p>
+                    <p class="mb-0"><strong>Valor:</strong> {{ valor }}</p>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+<script>
+function generarNuevosDatos() {
+    const btn = event.target;
+    const originalText = btn.innerHTML;
+    btn.innerHTML = '<i class="bi bi-hourglass-split"></i> Generando...';
+    btn.disabled = true;
+    setTimeout(() => {
+        btn.innerHTML = originalText;
+        btn.disabled = false;
+        alert('Nuevos datos generados (simulación)');
+    }, 2000);
+}
+</script>
+{% endblock %}
