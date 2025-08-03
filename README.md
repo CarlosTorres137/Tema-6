@@ -79,7 +79,7 @@ Ambos algoritmos se muestran visualmente en tablas con colores y resultados deta
 ## 📸 Capturas de pantalla
 
 ### Menú Principal
-![Menú Principal](![alt text])
+![Menú Principal](https://github.com/CarlosTorres137/Tema-6/blob/830a2a58f1294b76ee696ed6980b9012c433c1d0/Menu%20Principal.png)
 
 ---
 
