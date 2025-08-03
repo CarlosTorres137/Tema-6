@@ -14,9 +14,9 @@ Es ideal para aprender o enseñar cómo trabajan internamente estos algoritmos d
 - **Fecha de entrega:** 02/08/2025  
 
 ### 🧑‍🤝‍🧑 Integrantes del equipo:
-- Sergio Alexander Antonio Gracida  
+- Carlos Antonio Cortes Torres  
 - Luis Alberto Figueroa González  
-- Carlos Antonio Cortés Torres  
+- Sergio Alexander Antonio Gracida   
 - Arath Yahir López Guzmán  
 - Oswaldo Martínez Vidaña  
 - Ángel David García Blas  
@@ -79,16 +79,16 @@ Ambos algoritmos se muestran visualmente en tablas con colores y resultados deta
 ## 📸 Capturas de pantalla
 
 ### Menú Principal
-![Menú Principal](menu_principal.png)
+![Menú Principal](![alt text])
 
 ---
 
 ### Búsqueda Secuencial
-![Búsqueda Secuencial](busqueda_secuencial.png)
+![Búsqueda Secuencial](![alt text])
 
 ---
 
 ### Búsqueda Binaria
-![Búsqueda Binaria](busqueda_binaria.png)
+![Búsqueda Binaria](![alt text])
 
 ---
