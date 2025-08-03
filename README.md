@@ -84,7 +84,7 @@ Ambos algoritmos se muestran visualmente en tablas con colores y resultados deta
 ---
 
 ### Búsqueda Secuencial
-![Búsqueda Secuencial](https://github.com/CarlosTorres137/Tema-6/edit/principal/README.md)
+![Búsqueda Secuencial](https://github.com/CarlosTorres137/Tema-6/blob/6f9d55958cfc074810bcfb2617248c871c3dcdf4/Busqueda%20Secuencial.png)
 
 ---
 
